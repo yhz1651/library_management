@@ -1,0 +1,22 @@
+# springboot配置文件
+server:
+  port: 9090 # 端口号
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/library_management?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false # 连接数据库
+    username: root # 数据库账号
+    password: yhz1651 # 数据库密码（自己定义的）
+  servlet:
+    multipart:
+      max-file-size: 10MB #最大上传文件大小可以根据情况自定义
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # 将xml映射到mapper
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印日志
+    map-underscore-to-camel-case: true  # 开启数据库字段下划线转驼峰（正常情况是完全一样的，加上这条可以下划线转驼峰对应）
+
+
+
